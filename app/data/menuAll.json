@@ -1,7 +1,7 @@
 {
     "navItems": [
         {
-            "id": "item1",
+            "id": "item1_xx",
             "parentId": "0",
             "header": "menu #1",
             "sortOrder": 10,

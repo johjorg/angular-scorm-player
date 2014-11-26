@@ -1,5 +1,5 @@
 {
-  "name": "jjwebapp",
+  "name": "angular-scorm-player",
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
@@ -38,5 +38,9 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/johjorg/angular-scorm-player.git"
   }
 }

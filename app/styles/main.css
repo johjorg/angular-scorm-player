@@ -10404,6 +10404,9 @@ button.close {
   float: left;
   width: 35%; }
 
+pre {
+  font-size: 10px; }
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -10444,8 +10447,7 @@ body {
   padding: 0 0 0.5em;
   width: 150px;
   float: left;
-  overflow: hidden;
-  width: 24%; }
+  overflow: hidden; }
 
 .menu div {
   margin-bottom: 5px; }
