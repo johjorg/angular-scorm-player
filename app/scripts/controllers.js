@@ -41,12 +41,12 @@ appControllers.controller('dataCtrl', ['$scope', '$filter', 'MenuFetch', 'Course
 
               }
               // return sequence;
-            }
+            };
           addToNavSeq('0', -1);
           return navItemArray;
         };
         //calculate score_max
-        angular.forEach($scope.menuJson.navItems, function (value, key) {
+        angular.forEach($scope.menuJson.navItems, function (value) {
           CourseModel.score_max += value.weighting;
         });
         CourseModel.saveInitialScormData();
@@ -56,7 +56,7 @@ appControllers.controller('dataCtrl', ['$scope', '$filter', 'MenuFetch', 'Course
           CourseModel.setSelectedItem(menuItem);
         };
         //console.log('seq IS DOMNE??' + CourseModel.menuData.menuItems[0].id);
-        var selStartItem = (scorm.get('cmi.location') != "") ? CourseModel.getNavObjById(scorm.get('cmi.location')) : CourseModel.menuData.menuItems[0]
+        var selStartItem = (scorm.get('cmi.location') != "") ? CourseModel.getNavObjById(scorm.get('cmi.location')) : CourseModel.menuData.menuItems[0];
         CourseModel.setSelectedItem(selStartItem);
 
       });
@@ -80,8 +80,9 @@ appControllers.controller('mainCtrl', ['$scope', '$sce', 'CourseModel', 'SharedF
       $scope.courseModel = CourseModel;
       $scope.showFeedback = false;
       $scope.answersSelected = [];
-      $scope.scormTestData;
-      $scope.$watch('courseModel.currentQObject', function (newValue, oldValue) {
+      $scope.scormTestData = {};
+      $scope.$watch('courseModel.currentQObject', function () {
+        //atrr newValue, oldValue, unused
         //console.clear();
         CourseModel.enableEvalBtn = false;
         $scope.cObj = CourseModel.currentQObject;
@@ -103,7 +104,7 @@ appControllers.controller('mainCtrl', ['$scope', '$sce', 'CourseModel', 'SharedF
             CourseModel.setCurrentScormData("score.raw", CourseModel.menuData.weighting);
           } else {
             var savedResult = CourseModel.getCurrentScormData("result");
-            var cResult = (savedResult && savedResult!== 0 && savedResult!== "undefined")? savedResult:"unanticipated";
+            var cResult = (savedResult && savedResult !== 0 && savedResult !== "undefined") ? savedResult : "unanticipated";
             CourseModel.setCurrentScormData("result", cResult);
 
           }
@@ -117,7 +118,7 @@ appControllers.controller('mainCtrl', ['$scope', '$sce', 'CourseModel', 'SharedF
         //console.log('currentQObject CourseModel.enableEvalBtn:', CourseModel.enableEvalBtn);
 
       });
-      $scope.$watch('answersSelected', function (newValue, oldValue) {
+      $scope.$watch('answersSelected', function (newValue) {
         $scope.currentResult = newValue;
       }, true);
       $scope.navigate = function (step) {
@@ -143,10 +144,7 @@ appControllers.controller('mainCtrl', ['$scope', '$sce', 'CourseModel', 'SharedF
         CourseModel.enableEvalBtn = false;
         CourseModel.setScoreRaw();
       };
-      $scope.isSelectedAnswer = function (index) {
-        //console.log('isSelectedAnswer:' + index);
-        return true;
-      };
+
       $scope.setFeedBack = function (answArr) {
         //console.log('setFeedBack:' + answArr.toString());
         if (answArr.toString() !== "undefined") {

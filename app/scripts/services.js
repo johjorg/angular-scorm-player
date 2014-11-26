@@ -21,7 +21,7 @@ appServices.factory('SharedFunctions', [
       return mArray.filter(function (val) {
         return !(val === "" || typeof val == "undefined" || val === null || val === "undefined");
       });
-    }
+    };
     return sFunctions;
   }]);
 
@@ -93,7 +93,7 @@ appServices.factory("CourseModel", ['$filter', 'MenuFetch', function ($filter, M
         totalScore += parseInt(scorm.get("cmi.interactions." + i + ".score.raw"), 10);
       }
     }
-    scorm.set("cmi.score.raw",totalScore)
+    scorm.set("cmi.score.raw", totalScore)
   };
   qData.saveInitialScormData = function () {
     scorm.set("cmi.score.max", qData.score_max);

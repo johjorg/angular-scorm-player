@@ -1,9 +1,9 @@
 {
     "navItems": [
         {
-            "id": "item1_xx",
+          "id": "item1",
             "parentId": "0",
-            "header": "menu #1",
+          "header": "menu #1 xxx",
             "sortOrder": 10,
             "contentUrl": "item1",
             "weighting":100
@@ -27,7 +27,7 @@
         {
             "id": "item4",
             "parentId": "0",
-            "header": "menu #4",
+          "header": "menu #4 xx",
             "sortOrder": 3,
             "contentUrl": "item4",
             "weighting":100
