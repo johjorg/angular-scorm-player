@@ -1,0 +1,10 @@
+<div ng-bind-html="mText"></div>
+<div class="quest">{{cObj.quiz.question}}</div>
+<form name="myForm" class="answersContainer">
+    <div ng-repeat="answer in cObj.quiz.answers">
+        <label>
+            <input ng-model="answersSelected[$index]" type="checkbox" ng-change="answClicked()" ng-true-value="{{ $index }}" ng-false-value=""/>
+            {{ $index }}:{{ answer }}
+        </label> <br/>
+    </div>
+</form>

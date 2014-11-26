@@ -1,0 +1,10 @@
+<div ng-bind-html="mText"></div>
+<div class="quest">{{cObj.quiz.question}}</div>
+<form name="myForm" class="answersContainer">
+    <div ng-repeat="answer in cObj.quiz.answers">
+        <input ng-model="answersSelected[0]" ng-change="answClicked()" id="rb-{{ $index }}" type="radio"
+               value="{{ $index }}"> <label for="rb-{{ $index }}">{{ $index }}:{{ answer }}</label> <br/>
+    </div>
+
+
+</form

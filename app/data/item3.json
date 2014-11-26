@@ -1,0 +1,16 @@
+{
+    "id": "mId",
+    "header": "I'm item 3",
+    "mainText": "Eksempel for <strong>eksemplets skyld</strong>, så kan <a href='http://google.com' target='_blank'>de aparte ællingen</a>  <ul><li>rap hen, onde at,</li><li> gøre aften i,</li><li> der svane </li></ul>så men lægger det forunderlig. I at have ægget stille kom have. Over så elendighed skal, sider ser så. Mig så katten, lærkerne klappede for sagde den. Have de ligesom stor. Døde hovedet ællingen, en den jeg, kom for holder kanaler af den. Var hun nåede i imod mærkede spind. Ikke alle æg af, ja vil ved, ingen vinger rundt samme skyer, er imellem straks eget ikke. Ikke de et, kalkunkylling så, går hang. Spot enge, gnistrede aldrig gamle gik den et godt, højt fornuftige ælling under hun så, alle og mener mening jeg. Var stakkels lyst med",
+    "type": "radio",
+    "quiz": {
+        "question": "Why are kittens so cute?",
+        "answers": ["Magic", "Fur", "Meow", "More Kittens!"],
+        "correct": "3",
+        "feedback": {
+            "-1": "'-1' Det er forkert",
+            "3": "Det er rigtigt!!",
+            "0":"Det er feedback til '0'"
+        }
+    }
+}

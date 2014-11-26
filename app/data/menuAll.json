@@ -1,0 +1,60 @@
+{
+    "navItems": [
+        {
+            "id": "item1",
+            "parentId": "0",
+            "header": "menu #1",
+            "sortOrder": 10,
+            "contentUrl": "item1",
+            "weighting":100
+        },
+        {
+            "id": "item2",
+            "parentId": "item1",
+            "header": "menu #2",
+            "sortOrder": 0,
+            "contentUrl": "item2",
+            "weighting":100
+        },
+        {
+            "id": "item3",
+            "parentId": "item1",
+            "header": "menu #3",
+            "sortOrder": 1,
+            "contentUrl": "item3",
+            "weighting":100
+        },
+        {
+            "id": "item4",
+            "parentId": "0",
+            "header": "menu #4",
+            "sortOrder": 3,
+            "contentUrl": "item4",
+            "weighting":100
+        },
+        {
+            "id": "item5",
+            "parentId": "item3",
+            "header": "menu #5",
+            "sortOrder": 4,
+            "contentUrl": "item5",
+            "weighting":100
+        },
+        {
+            "id": "item6",
+            "parentId": "item4",
+            "header": "menu #6",
+            "sortOrder": 5,
+            "contentUrl": "item6",
+            "weighting":100
+        },
+        {
+            "id": "item7",
+            "parentId": "0",
+            "header": "menu #7",
+            "sortOrder": 6,
+            "contentUrl": "item7",
+            "weighting":100
+        }
+    ]
+}

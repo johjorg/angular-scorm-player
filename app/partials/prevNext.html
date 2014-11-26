@@ -1,0 +1,7 @@
+<div class="prevNextContainer">
+    <input ng-click="evaluate()" type="button" value="evaluér {{ courseModel.enableEvalBtn  }}"
+           ng-disabled="!courseModel.enableEvalBtn" class="btn btn-primary"/>
+
+    <button ng-click="navigate(-1)" ng-disabled="courseModel.menuData.isfirst" class="btn btn-primary">tilbage</button>
+    <button ng-click="navigate(1)" ng-disabled="courseModel.menuData.islast" class="btn btn-primary">fremad</button>
+</div>

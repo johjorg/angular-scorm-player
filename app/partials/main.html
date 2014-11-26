@@ -1,0 +1,22 @@
+<div ng-controller="mainCtrl">
+  <h1>{{cObj.header}}</h1>
+
+
+  <div ng-switch on="cObj.type">
+    <div ng-switch-when="type1">
+      <div ng-include src="'partials/type1.html'"></div>
+    </div>
+    <div ng-switch-when="radio">
+      <div ng-include src="'partials/radio.html'"></div>
+    </div>
+    <div ng-switch-when="checkbox">
+      <div ng-include src="'partials/checkbox.html'"></div>
+    </div>
+  </div>
+  <div class="feedback" ng-show="showFeedback"> {{getFeedbacText}}</div>
+  <div ng-include src="'partials/prevNext.html'">
+
+  </div>
+</div>
+
+
