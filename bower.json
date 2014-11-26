@@ -1,5 +1,5 @@
 {
-  "name": "jj-web-app",
+  "name": "angular-scorm-player",
   "version": "0.0.0",
   "dependencies": {
     "angular": "1.2.15",
