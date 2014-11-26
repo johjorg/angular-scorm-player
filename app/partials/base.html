@@ -1,7 +1,6 @@
 <div id="mainWrapper">
   <div header class="header"></div>
   <div class="menu">
-
     <div
       ng-class="{selected: menuItem.id==courseModel.menuData.selectedId,unselected: menuItem.id!=courseModel.menuData.selectedId}"
       class="menuLevel_{{menuItem.navLevel}}"
@@ -9,10 +8,8 @@
       ng-repeat="menuItem in courseModel.menuData.menuItems" ng-click="setSelectedItem(menuItem)">
       {{menuItem.id}}: {{menuItem.header}} <strong>pId:{{menuItem.parentId}} </strong>sortorder:{{menuItem.sortOrder}}
       <em>{{ menuItem.navLevel }}</em></div>
-
   </div>
   <div main class="mainContent"></div>
-
   <div footer class="footer"></div>
 </div>
 <div scormdata class="scormData"></div>
