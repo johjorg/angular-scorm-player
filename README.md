@@ -1,5 +1,6 @@
 angular-scorm-player
 ====================
 
-SCORM player using AngularJs
-work in progress
+SCORM player using AngularJs 
+
+work in progress...
