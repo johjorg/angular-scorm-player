@@ -2,5 +2,5 @@
     "id": "mId",
     "header": "I'm item 1",
     "mainText": "asdasd sadsa<hr/><iframe src='http://region-midtjylland.23video.com/8162548.ihtml/player.html?token=ad2539b6f1f624613f1fd9501fe0f9c9&source=embed&photo%5fid=9514855' width='625' height='352' frameborder='0' border='0' scrolling='no' allowfullscreen='1' mozallowfullscreen='1' webkitallowfullscreen='1'></iframe>",
-    "type": "type1"
+  "type": "default"
 }

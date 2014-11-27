@@ -1,4 +1,5 @@
-/* jshint devel:true, strict:false*/
+/* jshint undef: true, unused: true */
+/* jshint undef: false, unused: true */
 /* =====================================================================================
 
  SCORM wrapper v1.1.7 by Philip Hutchison, May 2008 (http://pipwerks.com).

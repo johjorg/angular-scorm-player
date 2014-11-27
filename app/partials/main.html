@@ -1,8 +1,8 @@
 <div ng-controller="mainCtrl">
   <h1>{{cObj.header}}</h1>
   <div ng-switch on="cObj.type">
-    <div ng-switch-when="type1">
-      <div ng-include src="'partials/type1.html'"></div>
+    <div ng-switch-when="default">
+      <div ng-include src="'partials/default.html'"></div>
     </div>
     <div ng-switch-when="radio">
       <div ng-include src="'partials/radio.html'"></div>

@@ -1,3 +1,4 @@
+/* global scorm */
 'use strict';
 
 /* Services */
@@ -19,11 +20,12 @@ appServices.factory('SharedFunctions', [
     var sFunctions = {};
     sFunctions.cleanArray = function (mArray) {
       return mArray.filter(function (val) {
-        return !(val === "" || typeof val == "undefined" || val === null || val === "undefined");
+        return !(val === "" || typeof val === "undefined" || val === null || val === "undefined");
       });
     };
     return sFunctions;
-  }]);
+  }
+]);
 
 appServices.factory("CourseModel", ['$filter', 'MenuFetch', function ($filter, MenuFetch) {
 
@@ -32,7 +34,7 @@ appServices.factory("CourseModel", ['$filter', 'MenuFetch', function ($filter, M
   qData.menuData = {};
   qData.menuData.menuItems = [];
   qData.enableEvalBtn = false;
-  qData.score_max = 0;
+  qData.scoreMax = 0;
   qData.setCurrentQObject = function (qObj) {
 
     qData.currentQObject = qObj;
@@ -70,8 +72,8 @@ appServices.factory("CourseModel", ['$filter', 'MenuFetch', function ($filter, M
     scorm.set('cmi.location', qData.menuData.selectedId);
     scorm.save();
   };
-  qData.getLearner_response = function () {
-    //console.log("##getLearner_response: " + scorm.get("cmi.interactions." + qData.scormCmiIAIindex + ".learner_response"))
+  qData.getLearnerResponse = function () {
+    //console.log("##getLearnerResponse: " + scorm.get("cmi.interactions." + qData.scormCmiIAIindex + ".learner_response"))
     var lResponse = scorm.get("cmi.interactions." + qData.scormCmiIAIindex + ".learner_response");
     return (lResponse === undefined) ? [] : lResponse.split(",");
   };
@@ -93,10 +95,10 @@ appServices.factory("CourseModel", ['$filter', 'MenuFetch', function ($filter, M
         totalScore += parseInt(scorm.get("cmi.interactions." + i + ".score.raw"), 10);
       }
     }
-    scorm.set("cmi.score.raw", totalScore)
+    scorm.set("cmi.score.raw", totalScore);
   };
   qData.saveInitialScormData = function () {
-    scorm.set("cmi.score.max", qData.score_max);
+    scorm.set("cmi.score.max", qData.scoreMax);
     scorm.set("cmi.score.min", 0);
     scorm.save();
   };

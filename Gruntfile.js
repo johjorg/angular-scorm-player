@@ -19,7 +19,7 @@ module.exports = function (grunt) {
   grunt.initConfig({
     removelogging: {
       dist: {
-        src: "dist/scripts/*.js" // Each file will be overwritten with the output!
+        src: 'dist/scripts/*.js' // Each file will be overwritten with the output!
       }
     },
     // Project settings

@@ -1,3 +1,4 @@
+/* global pipwerks */
 'use strict';
 
 /* Controllers */
@@ -10,6 +11,7 @@ appControllers.controller('dataCtrl', ['$scope', '$filter', 'MenuFetch', 'Course
 
       //init scorm;
       scorm.init();
+
       //console.log('scorm.isAvailable:' + scorm.isAvailable());
       //console.log('cmi.learner_name:' + scorm.get('cmi.learner_name'));
       //console.log('cmi.location:' + scorm.get('cmi.location'));
@@ -21,11 +23,8 @@ appControllers.controller('dataCtrl', ['$scope', '$filter', 'MenuFetch', 'Course
           var navItemArray = [],
             addToNavSeq = function (pId, nLevel) {
               nLevel += 1;
-              //console.log('-------------\naddToNavSeq:' + pId);
               var nodes;
               nodes = $filter('filter')(menuJson.navItems, {parentId: pId});
-
-              //console.log('nodes antal:' + nodes.length);
               //sort according to attr "sortOrder"
               nodes.sort(function (a, b) {
                 return (parseInt(a.sortOrder, 10) - parseInt(b.sortOrder, 10));
@@ -34,7 +33,6 @@ appControllers.controller('dataCtrl', ['$scope', '$filter', 'MenuFetch', 'Course
               for (var i = 0; i < nodes.length; i += 1) {
                 //get attribute id
                 var currentId = nodes[i].id;
-                //console.log('score:' + nodes[i].weighting);
                 nodes[i].navLevel = nLevel;
                 navItemArray.push(nodes[i]);
                 addToNavSeq(currentId, nLevel);
@@ -45,18 +43,19 @@ appControllers.controller('dataCtrl', ['$scope', '$filter', 'MenuFetch', 'Course
           addToNavSeq('0', -1);
           return navItemArray;
         };
-        //calculate score_max
+        //calculate scoreMax
         angular.forEach($scope.menuJson.navItems, function (value) {
-          CourseModel.score_max += value.weighting;
+          CourseModel.scoreMax += value.weighting;
         });
         CourseModel.saveInitialScormData();
-        //console.log('CourseModel.score_max:' + CourseModel.score_max);
+        //console.log('CourseModel.scoreMax:' + CourseModel.scoreMax);
         CourseModel.menuData.menuItems = navigationSequence();
         $scope.setSelectedItem = function (menuItem) {
           CourseModel.setSelectedItem(menuItem);
         };
         //console.log('seq IS DOMNE??' + CourseModel.menuData.menuItems[0].id);
-        var selStartItem = (scorm.get('cmi.location') != "") ? CourseModel.getNavObjById(scorm.get('cmi.location')) : CourseModel.menuData.menuItems[0];
+        console.log('cmi.location:' + scorm.get('cmi.location'));
+        var selStartItem = (scorm.get('cmi.location') !== '' && scorm.get('cmi.location') !== null) ? CourseModel.getNavObjById(scorm.get('cmi.location')) : CourseModel.menuData.menuItems[0];
         CourseModel.setSelectedItem(selStartItem);
 
       });
@@ -95,7 +94,7 @@ appControllers.controller('mainCtrl', ['$scope', '$sce', 'CourseModel', 'SharedF
           //console.log(": cmi learner_response : " + CourseModel.getCurrentScormData("learner_response"));
           //console.log(": cmi result: " + CourseModel.getCurrentScormData("result"));
           //console.log(": iaType: " + $scope.iaType);
-          $scope.answersSelected = CourseModel.getLearner_response();
+          $scope.answersSelected = CourseModel.getLearnerResponse();
           $scope.setFeedBack($scope.answersSelected);
           CourseModel.enableEvalBtn = false;
           CourseModel.setCurrentScormData("weighting", CourseModel.menuData.weighting);
@@ -111,7 +110,7 @@ appControllers.controller('mainCtrl', ['$scope', '$sce', 'CourseModel', 'SharedF
         }
         CourseModel.setScoreRaw();
         $scope.scormTestData = JSON.stringify(pipwerks.testData, null, "\t");
-        //console.log("IA READY getLearner_response:" + CourseModel.getLearner_response());
+        //console.log("IA READY getLearnerResponse:" + CourseModel.getLearnerResponse());
 
         //
 

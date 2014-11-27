@@ -6,7 +6,7 @@
           "header": "menu #1 xxx",
             "sortOrder": 10,
             "contentUrl": "item1",
-            "weighting":100
+          "weighting": 0
         },
         {
             "id": "item2",
@@ -30,7 +30,7 @@
           "header": "menu #4 xx",
             "sortOrder": 3,
             "contentUrl": "item4",
-            "weighting":100
+          "weighting": 0
         },
         {
             "id": "item5",
@@ -38,7 +38,7 @@
             "header": "menu #5",
             "sortOrder": 4,
             "contentUrl": "item5",
-            "weighting":100
+          "weighting": 0
         },
         {
             "id": "item6",
@@ -46,7 +46,7 @@
             "header": "menu #6",
             "sortOrder": 5,
             "contentUrl": "item6",
-            "weighting":100
+          "weighting": 0
         },
         {
             "id": "item7",
@@ -54,7 +54,7 @@
             "header": "menu #7",
             "sortOrder": 6,
             "contentUrl": "item7",
-            "weighting":100
+          "weighting": 0
         }
     ]
 }

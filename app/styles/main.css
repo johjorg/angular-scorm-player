@@ -10449,6 +10449,11 @@ body {
   float: left;
   overflow: hidden; }
 
+.middleSection {
+  border: 1px solid blue;
+  overflow: hidden;
+}
+
 .menu div {
   margin-bottom: 5px; }
 
